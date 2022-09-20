@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 16px;
+
+	/* https://cssgradient.io/gradient-backgrounds/ */
+	background: #c6ffdd;
+	background: linear-gradient( to right, #f7797d, #fbd786, #c6ffdd );
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.quiz {
+	position: relative;
+	padding: 2rem 2rem calc(2rem + 70px);
+
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+	width: 600px;
+	max-width: 95vw;
+	overflow: hidden;
+}
+
+.title{
+	font-size: 1.5rem;
+	padding: 1rem 0;
+	text-align: center;
+	margin: 0;
+}
+
+.summary {
+	text-align: center;
+	margin: 0.5rem 0 1rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+.result {
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.quiz-list {
+	list-style-type: none;
+	padding: 0;
+}
+
+.quiz-list li {
+	font-size: 1.2rem;
+}
+
+.quiz-list label {
+	cursor: pointer;
+	width: 100%;
+    display: block;
+	padding: 1rem 0.5rem;
+}
+
+.quiz-list label:hover {
+	background-color: seashell;
+}
+
+.quiz-list label.correct {
+	color: rgb(36, 144, 77);
+	font-weight: bold;
+}
+
+.quiz-list label.disabled {
+	cursor: no-drop;
+}
+
+.quiz-list label.disabled:hover {
+	cursor: no-drop;
+	background-color: transparent;
+}
+
+.quiz-list label.wrong {
+	color: rgb(218, 59, 59);
+	font-weight: bold;
+}
+
+.quiz-list input[type="radio"] {
+	margin-right: 10px;
+}
+
+.quiz-submit {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 70px;
+	line-height: 70px;
+}
+
+.submit {
+	background-color: #8e44ad;
+	color: #fff;
+	border: none;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	font-size: 1.1rem;
+	font-family: inherit;
+
+}
+
+.submit:hover {
+	background-color: #732d91;
+}
+
+.submit:focus {
+	outline: none;
+	background-color: #5e3370;
+}
+
+.submit.next {
+	background-color: #000000;
+}
+
+.submit.next:hover {
+	background-color: #222222;
+}
+
+.submit.next:focus {
+	outline: none;
+	background-color: #444444;
+}
+
+.quiz-list.shake {
+	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+	color: #94ca00;
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
